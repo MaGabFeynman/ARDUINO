@@ -1,0 +1,112 @@
+int led=13;
+int led1=11;
+int led2=12;
+int b1=6;
+int b2=7;
+int b3=3;
+int b4=4;
+int b5=5;
+int b6=8;
+int b7=9;
+int b8=10;
+int estadob1=0;
+int estadob2=0;
+int estadob3=0;
+int estadob4=0;
+int estadob5=0;
+int estadob6=0;
+int estadob7=0;
+int estadob8=0;
+
+void setup() {
+  pinMode (led, OUTPUT);
+  pinMode (led1, OUTPUT);
+  pinMode (led2, OUTPUT);
+  pinMode (b1, INPUT);
+  pinMode (b2, INPUT);
+  pinMode (b3, INPUT);
+  pinMode (b4, INPUT);
+  pinMode (b5, INPUT);
+  pinMode (b6, INPUT);
+  pinMode (b7, INPUT);
+  pinMode (b8, INPUT);
+}
+
+void loop() {
+  estadob1=digitalRead(b1);
+  estadob2=digitalRead(b2);
+  estadob3=digitalRead(b3);
+  estadob4=digitalRead(b4);
+  estadob5=digitalRead(b5);
+  estadob6=digitalRead(b6);
+  estadob7=digitalRead(b7);
+  estadob8=digitalRead(b8);
+  digitalWrite(led1,(estadob1));
+  digitalWrite(led2,(estadob2));
+  digitalWrite(led,LOW);
+  if (estadob3==HIGH){
+  if (estadob1==HIGH && estadob2==HIGH){
+    digitalWrite (led, HIGH);
+    }
+  else{
+    digitalWrite (led, LOW);
+  }}
+  if (estadob4==HIGH){
+    if (estadob1==HIGH || estadob2==HIGH){
+    digitalWrite (led, HIGH);
+    }
+  else{
+    digitalWrite (led, LOW);
+    }
+  }
+  if (estadob5==HIGH){
+   estadob1=digitalRead(b1);
+   digitalWrite (led, !(estadob1));
+  }
+  if (estadob6==HIGH){
+  if (estadob1==LOW && estadob2==LOW){
+    digitalWrite (led, HIGH);
+    }
+  else{
+    if (estadob1==LOW && estadob2==HIGH){
+    digitalWrite (led, LOW);
+      }
+    else{
+    if (estadob1==HIGH && estadob2==LOW){
+    digitalWrite (led, LOW);
+    }}
+}}
+  if (estadob7==HIGH){
+  if (estadob1==HIGH && estadob2==LOW){
+    digitalWrite (led, HIGH);
+    }
+  else{
+    if (estadob2==HIGH && estadob1==LOW){
+    digitalWrite (led, HIGH);
+      }
+    else{
+    if (estadob1==HIGH && estadob2==HIGH){
+    digitalWrite (led, LOW);
+    }
+    else{
+      digitalWrite (led,LOW);
+      }}
+}}
+  if (estadob8==HIGH){
+  if (estadob1==LOW && estadob2==LOW){
+    digitalWrite (led, HIGH);
+    }
+  else{
+    if (estadob2==HIGH && estadob1==LOW){
+    digitalWrite (led, LOW);
+      }
+    else{
+    if (estadob1==HIGH && estadob2==HIGH){
+    digitalWrite (led, HIGH);
+    }
+    else{
+      if(estadob1==HIGH && estadob2==LOW){
+      digitalWrite (led, LOW);
+      }}
+}}
+  }}
