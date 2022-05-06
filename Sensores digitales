@@ -1,0 +1,27 @@
+int TRI= 10;
+int ECO= 9;
+int LED= 13;
+int DURACION;
+int   DIST;
+void setup() {
+pinMode (TRI, OUTPUT);
+pinMode (ECO, INPUT);
+pinMode (LED, OUTPUT);
+Serial.begin (9600);
+}
+
+void loop() {
+  digitalWrite (TRI, HIGH);
+  delay(1);
+  digitalWrite (TRI, LOW);
+  DURACION = pulseIn (ECO, HIGH);
+  DIST = DURACION / 58.2;
+ 
+Serial.println(DIST);
+delay (200);
+ if(DIST <= 20 && DIST >=0){
+  digitalWrite (LED, HIGH);
+  delay(DIST * 10);
+  digitalWrite (LED, LOW);
+ }
+}
