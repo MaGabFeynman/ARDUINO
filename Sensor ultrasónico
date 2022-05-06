@@ -1,0 +1,20 @@
+int trig=A1;
+int eco=A2;
+int duracion;
+int distancia;
+
+void setup() {
+ pinMode (trig, OUTPUT);
+ pinMode (eco, INPUT);
+ Serial.begin (9600);
+}
+
+void loop() {
+ analogWrite(trig, HIGH);
+ delay (1);
+ analogRead(trig, LOW);
+ duracion= pulseIn(eco, HIGH);
+ distancia= duracion / 58.2;
+ Serial.println (distancia);
+
+}
