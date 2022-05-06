@@ -1,0 +1,32 @@
+#include <Servo.h>
+Servo servo;
+
+int pinServo = 11;
+int angulo=0;
+int pinPulsa1= 1;
+int pinPulsa2= 2;
+int pinPulsa3= 3;
+int statePulsa1=0;
+int statePulsa2=0;
+int statePulsa3=0;
+void setup() {
+ servo.attach(11);
+ pinMode(pinPulsa1,INPUT);
+ pinMode(pinPulsa2,INPUT);
+ pinMode(pinPulsa3,INPUT);
+ servo.write(angulo);
+}
+
+void loop() {
+  statePulsa1=digitalRead(pinPulsa1);
+  statePulsa2=digitalRead(pinPulsa2);
+  statePulsa3=digitalRead(pinPulsa3);
+  if(statePulsa1==HIGH){
+    servo.write(0);
+    }
+  
+   if(statePulsa3==HIGH){
+    servo.write(180);
+    }
+
+}
