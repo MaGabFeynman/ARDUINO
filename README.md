@@ -1,2 +1,2 @@
-# C-digo-servomotor-de-10-en-10-
+# PRÁCTICAS DE ARDUINO
 Utilizando el bucle for
