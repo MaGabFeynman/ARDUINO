@@ -1,0 +1,11 @@
+int vel=0;
+void setup() {
+  Serial.begin (9600);
+  
+}
+
+void loop() {
+ vel = analogRead(0);
+ Serial.println(vel);
+ delay(50);
+}
